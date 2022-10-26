@@ -6,12 +6,12 @@ import org.example.driver.DriverManager;
 
 public class DriverHooks {
     @Before
-    public void setupDriver(){
+    public void setupDriver() {
         DriverManager.setupDriver();
     }
 
     @After
-    public void quit(){
+    public void quit() {
         DriverManager.quitDriver();
     }
 }

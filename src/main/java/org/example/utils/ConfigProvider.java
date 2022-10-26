@@ -6,13 +6,9 @@ import java.util.Properties;
 public class ConfigProvider {
     private static final String CONFIG_PATH = "config.properties";
     private static final Properties prop = initProperties();
-
     public static final String CUCUMBER_URL = prop.getProperty("cucumber.url");
-
-
     private ConfigProvider() {
     }
-
     private static Properties initProperties() {
         Properties properties = new Properties();
         try {

@@ -29,7 +29,7 @@ public class MenuSteps {
     @Then("page with title {string} is displayed")
     public void verifyPageTitlePresence(String pageTitle) {
         assertThat(docsPage.isPageWithTitleDisplayed(pageTitle))
-                .overridingErrorMessage("Page with title '{}' is not displayed", pageTitle)
+                .overridingErrorMessage("Page with title '{}' is not displayed",pageTitle)
                 .isTrue();
     }
 

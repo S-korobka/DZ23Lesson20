@@ -9,7 +9,7 @@ import java.util.List;
 
 public class BasePage {
     public BasePage() {
-        PageFactory.initElements(DriverManager.getDriver(), this);
+        PageFactory.initElements(DriverManager.getDriver(),this);
     }
 
     public WebElement findElement(By by) {

@@ -3,7 +3,6 @@ package org.example.driver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import java.time.Duration;
 import java.util.Optional;
 
@@ -17,18 +16,20 @@ public class DriverManager {
 
     private DriverManager() {
     }
-    public static void setupDriver(){
+
+    public static void setupDriver() {
         WebDriver driver = getChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(IMPLICIT_WAIT_TIMEOUT));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(PAGE_lOAD_TIMEOUT));
         webDriverThreadLocal.set(driver);
     }
-    public static WebDriver getDriver(){
+
+    public static WebDriver getDriver() {
         return webDriverThreadLocal.get();
     }
 
-    public static void quitDriver(){
+    public static void quitDriver() {
         webDriverThreadLocal.get().quit();
         webDriverThreadLocal.remove();
 
@@ -38,9 +39,8 @@ public class DriverManager {
         });
     }
 
-    private static WebDriver getChromeDriver(){
+    private static WebDriver getChromeDriver() {
         WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        return driver;
+        return new ChromeDriver();
     }
 }

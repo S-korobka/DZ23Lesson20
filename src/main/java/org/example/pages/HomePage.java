@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 
 import static org.example.utils.ConfigProvider.CUCUMBER_URL;
 
-public class HomePage extends BasePage{
+public class HomePage extends BasePage {
     private static final String MENU_SECTION = "//a[contains(@class, 'nav-link')]";
     private static final String TEXT_PATTERN = "%s[contains(text(), '%s')]";
     private static final String CHILD_MENU_ITEM = "//*[contains(@class, 'dropdown')]//*[contains(@class, 'item')]";
@@ -15,11 +15,11 @@ public class HomePage extends BasePage{
         DriverManager.getDriver().get(CUCUMBER_URL);
     }
 
-    public WebElement menuSection(String linkText){
+    public WebElement menuSection(String linkText) {
         return findElement(By.xpath(String.format(TEXT_PATTERN,MENU_SECTION,linkText)));
     }
 
     public WebElement menuChildItem(String linkText) {
-        return findElement(By.xpath(String.format(TEXT_PATTERN, CHILD_MENU_ITEM, linkText)));
+        return findElement(By.xpath(String.format(TEXT_PATTERN,CHILD_MENU_ITEM,linkText)));
     }
 }
